@@ -12,7 +12,7 @@ function Home({ pokemons, swPeople }) {
       <h1>Catched Pokemon</h1>
       {pokemons.map(({ id, name }) => {
         return (
-          <div id={id}>
+          <div key={id}>
             <Pokemon id={id} name={name} />
             <Link href={`/pokemon/${id}`}>
               <a>Detail</a>
@@ -24,7 +24,7 @@ function Home({ pokemons, swPeople }) {
       <h1>Star Wars Charachters</h1>
       {swPeople.map(({ id, name }) => {
         return (
-          <div id={id}>
+          <div key={id}>
             <Character id={id} name={name} />
             <Link href={`/character/${id}`}>
               <a>Detail</a>
