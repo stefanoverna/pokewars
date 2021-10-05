@@ -7,10 +7,18 @@ body {
 }
 
 a {
-  color: inherit;
+  color: red;
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+}
+
+div {
+  margin-top: 10px;
 }
