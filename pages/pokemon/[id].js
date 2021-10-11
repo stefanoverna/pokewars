@@ -2,13 +2,14 @@ import Link from 'next/link';
 import * as api from 'lib/api';
 import Pokemon from 'components/Pokemon';
 
-function PokemonDetail({ pokemon }) {
+function PokemonDetail({ pokemon, lastGenerated }) {
   return (
     <div className="container">
       <Link href="/">
         <a>back</a>
       </Link>
       {pokemon && <Pokemon {...pokemon} />}
+      Last generated: {lastGenerated}
     </div>
   );
 }
@@ -31,6 +32,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       pokemon,
+      lastGenerated: new Date().toLocaleTimeString(),
     },
     revalidate: 10,
   };
