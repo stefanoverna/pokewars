@@ -23,7 +23,7 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   // { fallback: blocking } will server-render pages
   // on-demand if the path doesn't exist.
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {
@@ -34,7 +34,6 @@ export async function getStaticProps({ params }) {
       pokemon,
       lastGenerated: new Date().toLocaleTimeString(),
     },
-    revalidate: 10,
   };
 }
 
